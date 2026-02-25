@@ -1,0 +1,21 @@
+name: Despliegue Automatico Node Org
+
+on:
+  push:
+    branches:
+      - main  # Cambia a 'master' si esa es tu rama principal
+
+jobs:
+  desplegar:
+    runs-on: self-hosted
+
+    steps:
+      - name: Descargar cambios de GitHub
+        run: |
+          cd /home/serverst-01/serverst-01/nodejs-app
+          git pull origin main
+          
+      - name: Reiniciar contenedor de Node
+        run: |
+          cd /home/serverst-01/serverst-01
+          sudo docker compose restart nodejs
