@@ -3,13 +3,12 @@ const fs = require('fs');
 const app = express();
 
 app.use(express.urlencoded({ extended: true })); 
-app.use(express.static('public', { index: false }));
 
 let pendientes = []; 
 let realizadas = [];
 
 app.get('/', function(req, res) {
-    let paginaHtml = fs.readFileSync('public/index.html', 'utf8');
+    let paginaHtml = fs.readFileSync('public/vista.html', 'utf8');
 
     let textoPendientes = "";
     for (let i = 0; i < pendientes.length; i++) {
