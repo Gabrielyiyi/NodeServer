@@ -3,7 +3,7 @@ const fs = require('fs');
 const app = express();
 
 app.use(express.urlencoded({ extended: true })); 
-app.use(express.static('public'));
+app.use(express.static('public', { index: false }));
 
 let pendientes = []; 
 let realizadas = [];
