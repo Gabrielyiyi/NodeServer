@@ -1,38 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>APP de tareas</title>
     <style>
-        /* Diseño básico para que se vea ordenado */
-        body { font-family: Arial, sans-serif; background-color: #f5f5f5; color: #555; }
-        .contenedor { width: 400px; margin: 50px auto; }
-        h1, h2, h3 { font-weight: normal; color: #666; }
-        input[type="text"] { padding: 5px; width: 200px; }
-        button { padding: 5px 10px; cursor: pointer; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 10px; }
+      /* Diseño básico para que se vea ordenado */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #555;
+      }
+      .contenedor {
+        width: 400px;
+        margin: 50px auto;
+      }
+      h1,
+      h2,
+      h3 {
+        font-weight: normal;
+        color: #666;
+      }
+      input[type="text"] {
+        padding: 5px;
+        width: 200px;
+      }
+      button {
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      ul {
+        list-style-type: disc;
+        padding: 0 10px;
+      }
+      li {
+        margin-bottom: 10px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="contenedor">
-        <h1>Una APP de tareas</h1>
-        <h2>por hacer como lista</h2>
-        
-        <form action="/agregar" method="POST">
-            <input type="text" name="nuevaTarea" placeholder="Escribe tu tarea...">
-            <button type="submit">Agrega tarea</button>
-        </form>
+      <h1>Una APP de tareas</h1>
+      <h2>por hacer como lista</h2>
 
-        <h3>Tareas por hacer</h3>
-        <ul>
-            {{LISTA_PENDIENTES}}
-        </ul>
+      <form action="/agregar" method="POST">
+        <input
+          type="text"
+          name="nuevaTarea"
+          placeholder="Escribe tu tarea..."
+        />
+        <button type="submit">Agrega tarea</button>
+      </form>
 
-        <h3>Tareas realizadas</h3>
-        <ul>
-            {{LISTA_REALIZADAS}}
-        </ul>
+      <h3>Tareas por hacer</h3>
+      <ul>
+        {{LISTA_PENDIENTES}}
+      </ul>
+
+      <h3>Tareas realizadas</h3>
+      <ul>
+        {{LISTA_REALIZADAS}}
+      </ul>
     </div>
-</body>
+  </body>
 </html>
