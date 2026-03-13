@@ -99,6 +99,12 @@ app.post("/completar-varios", function (req, res) {
         let tarea = pendientes.splice(id, 1); // Remover tarea de pendientes
         realizadas.push(tarea[0]); // Agregar a realizadas
       });
+  } else {
+    res.send(
+      // Enviar alerta si no se seleccionó ninguna tarea
+      '<script>alert("No se seleccionó ninguna tarea"); window.location="/tareas";</script>',
+    );
+    return; // Salir de la función para evitar redirección
   }
   res.redirect("/tareas"); // Redirigir a la lista
 });
@@ -116,6 +122,12 @@ app.post("/eliminar-varios-realizadas", function (req, res) {
         // Iterar
         realizadas.splice(id, 1); // Eliminar de realizadas
       });
+  } else {
+    res.send(
+      // Enviar alerta si no se seleccionó ninguna tarea
+      '<script>alert("No se seleccionó ninguna tarea"); window.location="/tareas";</script>',
+    );
+    return; // Salir de la función para evitar redirección
   }
   res.redirect("/tareas"); // Redirigir
 });
