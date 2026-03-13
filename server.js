@@ -55,8 +55,8 @@ app.get("/tareas", function (req, res) {
   }
   textoRealizadas += "</form>";
 
-  paginaHtml = paginaHtml.replace("{{LISTA_PENDIENTES}}", textoPendientes); // Reemplazar placeholder con lista de pendientes
-  paginaHtml = paginaHtml.replace("{{LISTA_REALIZADAS}}", textoRealizadas); // Reemplazar placeholder con lista de realizadas
+  paginaHtml = paginaHtml.replace("{{LISTA_PENDIENTES}}", textoPendientes); // Reemplazar Marcador con lista de pendientes
+  paginaHtml = paginaHtml.replace("{{LISTA_REALIZADAS}}", textoRealizadas); // Reemplazar Marcador con lista de realizadas
 
   res.send(paginaHtml); // Enviar la página HTML generada al cliente
 });
